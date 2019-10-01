@@ -1,13 +1,16 @@
 const mongoose = require('mongoose');
 
 const BookingSchema = new mongoose.Schema({
-    thumbnail: String,
-    company: String,
-    price: Number,
-    techs: [String],
+    date: String,
+    approved: Boolean,
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
+    },
+
+    spot: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Spot',
     },
 });
 
